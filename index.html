@@ -210,7 +210,7 @@
 
         .principal-text h3 { font-size: 2rem; color: var(--primary-navy); margin-bottom: 10px; }
         .principal-text h4 { font-size: 1.2rem; color: var(--text-gray); margin-bottom: 20px; }
-        .principal-highlight { font-size: 1rem; } /* PC 버전 기본 크기 유지 */
+        .principal-highlight { font-size: 1rem; }
         
         /* 수업 방식 */
         .method-list {
@@ -398,7 +398,8 @@
 
         /* ⭐️ 모바일 및 태블릿 최적화 반응형 디자인 ⭐️ */
         @media (max-width: 900px) {
-            .schedule-grid { grid-template-columns: repeat(4, 1fr); }
+            /* PC버전처럼 7열을 유지하여 한눈에 보이게 수정 */
+            .schedule-grid { grid-template-columns: repeat(7, 1fr); gap: 5px; }
         }
         @media (max-width: 768px) {
             section { padding: 60px 15px; }
@@ -410,7 +411,7 @@
 
             /* 햄버거 메뉴 및 모바일 네비게이션 스타일 */
             .hamburger {
-                display: flex; /* 모바일에서 햄버거 메뉴 보이기 */
+                display: flex;
             }
             .nav-links {
                 display: flex;
@@ -446,7 +447,6 @@
                 border-bottom: none;
             }
 
-            /* 햄버거 클릭 시 X 모양으로 변형 */
             .hamburger.toggle span:nth-child(1) {
                 transform: translateY(8px) rotate(45deg);
             }
@@ -460,9 +460,7 @@
             .hero { padding: 130px 15px 90px; margin-top: 50px; }
             .hero-content { padding: 40px 20px; }
             
-            /* 수정된 부분 1: 히어로 섹션 텍스트 크기 0.1rem 감소 */
             .hero h1 { font-size: 1.5rem; } 
-            
             .hero p { font-size: 1rem; margin-bottom: 30px; }
             .btn { font-size: 1rem; padding: 12px 30px; }
 
@@ -473,8 +471,6 @@
             .principal-photo img { width: 160px; height: 160px; }
             .principal-text h3 { font-size: 1.7rem; }
             .principal-text h4 { font-size: 1.05rem; }
-            
-            /* 수정된 부분 2: 원장 소개 하이라이트 텍스트 크기 0.1rem 감소 */
             .principal-highlight { font-size: 0.9rem; } 
 
             .method-list { grid-template-columns: 1fr; gap: 15px; }
@@ -499,11 +495,12 @@
             .phone-highlight { font-size: 2rem; }
         }
         @media (max-width: 500px) {
-            .schedule-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .schedule-card:last-child { grid-column: 1 / -1; }
-            .schedule-card { padding: 15px 5px; }
-            .schedule-day { width: 35px; height: 35px; line-height: 35px; font-size: 1rem; margin-bottom: 10px; }
-            .schedule-time { font-size: 0.95rem; }
+            /* 모바일에서도 7열 한 줄로 한 눈에 보이도록 가로 크기(여백, 폰트) 대폭 축소 */
+            .schedule-grid { grid-template-columns: repeat(7, 1fr); gap: 2px; }
+            .schedule-card { padding: 8px 2px; }
+            .schedule-day { width: 26px; height: 26px; line-height: 26px; font-size: 0.75rem; margin-bottom: 5px; }
+            .schedule-time { font-size: 0.65rem; }
+            .schedule-time span { font-size: 0.55rem; }
         }
     </style>
 </head>
@@ -763,7 +760,7 @@
                 
                 <p style="color: var(--white); font-size: 1.1rem; margin: 15px 0;">혹은</p>
                 
-                <a href="https://naver.me/5XJtdJU1" class="naver-form-btn">네이버 폼 문의</a>
+                <a href="https://naver.me/5XJtdJU1" class="naver-form-btn" target="_blank">네이버 폼 문의</a>
             </div>
         </div>
     </section>
