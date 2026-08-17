@@ -476,7 +476,12 @@
             .method-list { grid-template-columns: 1fr; gap: 15px; }
             .method-item { padding: 25px 20px; }
 
-            .schedule-container { padding: 30px 15px; }
+            /* 시간표 컨테이너 가로 크기 제한 및 가운데 정렬 */
+            .schedule-container { 
+                padding: 30px 15px; 
+                max-width: 480px; 
+                margin: 20px auto 0; 
+            }
             .schedule-title { font-size: 1.3rem; margin-bottom: 20px; }
 
             .highschool-banner { padding: 30px 20px; margin-top: 30px; }
@@ -496,6 +501,14 @@
         }
         @media (max-width: 500px) {
             /* 모바일에서도 7열 한 줄로 한 눈에 보이도록 가로 크기(여백, 폰트) 대폭 축소 */
+            
+            /* 시간표 컨테이너 추가 너비 제한 및 내부 여백 조절 */
+            .schedule-container { 
+                max-width: 360px; 
+                margin: 20px auto 0; 
+                padding: 20px 10px; 
+            }
+            
             .schedule-grid { grid-template-columns: repeat(7, 1fr); gap: 2px; }
             .schedule-card { padding: 8px 2px; }
             .schedule-day { width: 26px; height: 26px; line-height: 26px; font-size: 0.75rem; margin-bottom: 5px; }
