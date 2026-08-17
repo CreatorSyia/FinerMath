@@ -40,6 +40,9 @@
 
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
+        
+        /* 모바일 전용 줄바꿈 클래스 (PC에서는 숨김) */
+        .mobile-break { display: none; }
 
         /* 공통 섹션 스타일 */
         section { padding: 80px 20px; }
@@ -400,13 +403,16 @@
 
         /* ⭐️ 모바일 및 태블릿 최적화 반응형 디자인 ⭐️ */
         @media (max-width: 900px) {
-            /* PC버전처럼 7열을 유지하여 한눈에 보이게 수정 */
+            /* PC버전처럼 7열을 유지 */
             .schedule-grid { grid-template-columns: repeat(7, 1fr); gap: 5px; }
         }
         @media (max-width: 768px) {
             section { padding: 60px 15px; }
             .section-title { font-size: 1.8rem; margin-bottom: 15px; }
             .section-subtitle { font-size: 0.95rem; margin-bottom: 30px; }
+            
+            /* 모바일 줄바꿈 활성화 */
+            .mobile-break { display: block; }
 
             .nav-container { padding: 15px; }
             .logo-text { font-size: 1.2rem; }
@@ -478,13 +484,17 @@
             .method-list { grid-template-columns: 1fr; gap: 15px; }
             .method-item { padding: 25px 20px; }
 
-            /* 시간표 컨테이너 가로 크기 제한 및 가운데 정렬 */
+            /* 시간표 컨테이너 가로 크기 제한 해제 및 4열 레이아웃 적용 */
             .schedule-container { 
                 padding: 30px 15px; 
-                max-width: 480px; 
+                max-width: 100%; 
                 margin: 20px auto 0; 
             }
             .schedule-title { font-size: 1.3rem; margin-bottom: 20px; }
+            .schedule-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+            }
 
             .highschool-banner { padding: 30px 20px; margin-top: 30px; }
             .highschool-banner h3 { font-size: 1.3rem; }
@@ -507,20 +517,18 @@
             }
         }
         @media (max-width: 500px) {
-            /* 모바일에서도 7열 한 줄로 한 눈에 보이도록 가로 크기(여백, 폰트) 대폭 축소 */
-            
-            /* 시간표 컨테이너 추가 너비 제한 및 내부 여백 조절 */
+            /* 모바일에서 시간표 내용이 큼직하게 잘 보이도록 2열 배치로 수정 */
             .schedule-container { 
-                max-width: 360px; 
+                max-width: 100%; 
                 margin: 20px auto 0; 
-                padding: 20px 10px; 
+                padding: 20px 15px; 
             }
             
-            .schedule-grid { grid-template-columns: repeat(7, 1fr); gap: 2px; }
-            .schedule-card { padding: 8px 2px; }
-            .schedule-day { width: 26px; height: 26px; line-height: 26px; font-size: 0.75rem; margin-bottom: 5px; }
-            .schedule-time { font-size: 0.65rem; }
-            .schedule-time span { font-size: 0.55rem; }
+            .schedule-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .schedule-card { padding: 15px 10px; }
+            .schedule-day { width: 40px; height: 40px; line-height: 40px; font-size: 1.1rem; margin-bottom: 10px; }
+            .schedule-time { font-size: 1rem; }
+            .schedule-time span { font-size: 0.85rem; }
 
             .tuition-table th, .tuition-table td { padding: 10px 4px; font-size: 0.85rem; }
         }
@@ -755,7 +763,7 @@
 
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="contact-title">수학을 잘하는 것보다, 수학을 스스로 생각할 수 있도록</h2>
+            <h2 class="contact-title">수학을 잘하는 것보다,<br class="mobile-break"> 수학을 스스로 생각할 수 있도록</h2>
             <p class="contact-desc">파이너 수학은 학생 한 명 한 명을 세밀하게 살피며 현재의 부족한 부분을 채우고,<br>앞으로 스스로 공부할 수 있는 힘까지 길러드리겠습니다.</p>
             
             <div class="contact-info">
