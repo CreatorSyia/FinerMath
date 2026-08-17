@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>파이너 수학교습소 | 더 섬세하게, 더 꼼꼼하게</title>
     
-    <!-- 파비콘 추가 (브라우저 탭 아이콘) -->
     <link rel="icon" href="https://raw.githubusercontent.com/CreatorSyia/FinerMath/refs/heads/main/FinerMathLogo2.png">
     
-    <!-- 폰트 적용 (Noto Sans KR) -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         /* 기본 설정 */
@@ -496,7 +494,8 @@
             .review-grid { grid-template-columns: 1fr; gap: 15px; }
             .review-card { padding: 25px 20px; }
 
-            .tuition-table th, .tuition-table td { padding: 15px 10px; font-size: 0.95rem; word-break: keep-all; }
+            .tuition-table { min-width: 100%; }
+            .tuition-table th, .tuition-table td { padding: 12px 8px; font-size: 0.9rem; word-break: keep-all; }
 
             .contact-title { font-size: 1.8rem; margin-bottom: 15px; }
             .contact-desc { font-size: 1rem; }
@@ -522,12 +521,13 @@
             .schedule-day { width: 26px; height: 26px; line-height: 26px; font-size: 0.75rem; margin-bottom: 5px; }
             .schedule-time { font-size: 0.65rem; }
             .schedule-time span { font-size: 0.55rem; }
+
+            .tuition-table th, .tuition-table td { padding: 10px 4px; font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 헤더 -->
     <header>
         <div class="nav-container">
             <a href="#home" class="logo">
@@ -535,7 +535,6 @@
                 <span class="logo-text">파이너 수학교습소</span>
             </a>
             
-            <!-- 햄버거 메뉴 아이콘 추가 -->
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -553,15 +552,12 @@
         </div>
     </header>
 
-    <!-- 수정된 메인 히어로 -->
     <section class="hero" id="home">
-        <!-- 배경 동영상 추가 -->
         <video autoplay loop muted playsinline class="hero-video">
             <source src="https://github.com/CreatorSyia/FinerMath/raw/refs/heads/main/FinerMathVideo.mp4" type="video/mp4">
         </video>
         
         <div class="container hero-container">
-            <!-- 텍스트와 버튼을 감싸는 남색 둥근 모서리 사각형 -->
             <div class="hero-content">
                 <h1>더 섬세하게, 더 꼼꼼하게.<br>수학을 제대로 배우는 곳</h1>
                 <p>파이너(Finer)는 ‘더 섬세한’, ‘더 세밀한’, ‘더 꼼꼼한’이라는 뜻을 담고 있습니다.<br>
@@ -571,7 +567,6 @@
         </div>
     </section>
 
-    <!-- 특징 섹션 -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">왜 파이너 수학인가?</h2>
@@ -597,7 +592,6 @@
         </div>
     </section>
 
-    <!-- 원장 소개 -->
     <section id="principal" class="principal-section">
         <div class="container">
             <div class="principal-content">
@@ -612,14 +606,12 @@
                     <br>
                     <p>오랜 강의 경험과 다양한 학생들을 지도하며 쌓은 노하우를 바탕으로 학생의 현재 실력을 정확하게 파악하고, 필요한 학습 방향을 제시합니다.</p>
                     <br>
-                    <!-- 클래스 추가됨 -->
                     <p class="principal-highlight"><strong>경험으로 쌓은 지도력, 결과로 증명된 수학 교육</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 수업 방식 및 고등 내신 -->
     <section id="curriculum">
         <div class="container">
             <h2 class="section-title">파이너 수학의 수업 방식</h2>
@@ -641,7 +633,6 @@
                     <p>학생이 어려워하는 단원과 개념을 정확하게 찾아내고 필요한 부분을 반복적으로 보완하여 학습의 빈틈을 줄입니다.</p>
                 </div>
                 
-                <!-- 시간표 -->
                 <div class="schedule-container">
                     <h4 class="schedule-title">학원 운영 시간표</h4>
                     <div class="schedule-grid">
@@ -686,7 +677,6 @@
         </div>
     </section>
 
-    <!-- 수강 후기 -->
     <section id="review" class="review-section">
         <div class="container">
             <h2 class="section-title">학생들이 말하는 파이너 수학</h2>
@@ -711,11 +701,9 @@
         </div>
     </section>
 
-    <!-- 수강료 안내 -->
     <section id="tuition">
         <div class="container">
             <h2 class="section-title">수강료 안내</h2>
-            <!-- 모바일에서 가로 스크롤을 위한 래퍼 추가 -->
             <div class="table-responsive">
                 <table class="tuition-table">
                     <thead>
@@ -765,7 +753,6 @@
         </div>
     </section>
 
-    <!-- 오시는 길 및 연락처 -->
     <section id="contact" class="contact-section">
         <div class="container">
             <h2 class="contact-title">수학을 잘하는 것보다, 수학을 스스로 생각할 수 있도록</h2>
@@ -786,12 +773,10 @@
         </div>
     </section>
 
-    <!-- 푸터 -->
     <footer>
         <p>Copyright © 파이너 수학교습소. All rights reserved.</p>
     </footer>
 
-    <!-- ⭐️ 햄버거 메뉴 동작을 위한 자바스크립트 추가 ⭐️ -->
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
