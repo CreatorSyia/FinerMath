@@ -513,6 +513,22 @@
 
             .tuition-table th, .tuition-table td { padding: 10px 4px; font-size: 0.85rem; }
         }
+
+        /* 이미지 저장 방지 (드래그, 선택, 길게 누르기 차단) */
+        img {
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+            
+            -webkit-touch-callout: none; /* 모바일(iOS 등) 길게 누르기 메뉴 방지 */
+            
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none; /* 이미지 및 텍스트 선택 방지 */
+        }
     </style>
 </head>
 <body>
@@ -783,6 +799,13 @@
                 navLinks.classList.remove('active');
                 hamburger.classList.remove('toggle');
             });
+        });
+
+        // 이미지 위에서 마우스 우클릭 방지
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
         });
     </script>
 </body>
