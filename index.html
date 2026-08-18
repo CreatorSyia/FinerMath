@@ -146,6 +146,7 @@
             object-fit: cover;
             z-index: 0;
             opacity: 0.5;
+            pointer-events: none; /* 비디오 클릭, 우클릭, 드래그 등 모든 상호작용 차단 */
         }
 
         .hero-container {
@@ -514,8 +515,8 @@
             .tuition-table th, .tuition-table td { padding: 10px 4px; font-size: 0.85rem; }
         }
 
-        /* 이미지 저장 방지 (드래그, 선택, 길게 누르기 차단) */
-        img {
+        /* 이미지 및 비디오 저장 방지 (드래그, 선택, 길게 누르기 차단) */
+        img, video {
             -webkit-user-drag: none;
             -khtml-user-drag: none;
             -moz-user-drag: none;
@@ -558,7 +559,8 @@
     </header>
 
     <section class="hero" id="home">
-        <video autoplay loop muted playsinline class="hero-video">
+        <!-- 비디오에 controlsList="nodownload" 및 우클릭 방지 인라인 추가 -->
+        <video autoplay loop muted playsinline class="hero-video" controlsList="nodownload" oncontextmenu="return false;">
             <source src="https://github.com/CreatorSyia/FinerMathA/raw/refs/heads/main/FinerMathVideo.mp4" type="video/mp4">
         </video>
         
@@ -801,9 +803,9 @@
             });
         });
 
-        // 이미지 위에서 마우스 우클릭 방지
+        // 이미지 및 비디오 위에서 마우스 우클릭 방지
         document.addEventListener('contextmenu', function(e) {
-            if (e.target.tagName === 'IMG') {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
                 e.preventDefault();
             }
         });
